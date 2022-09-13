@@ -1,0 +1,153 @@
+html {
+  font-size: 62.5%; /*10px is 1rem*/
+  font-family: "Roboto Mono", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  background-color: #5468e7;
+}
+
+h1 {
+  text-align: center;
+  font-size: 10rem;
+  line-height: 1;
+  color: crimson;
+}
+
+.score {
+  background-color: crimson;
+  padding: 0 4.8rem;
+  line-height: 1;
+  border-radius: 1.6rem;
+  color: #fff;
+  font-size: 3.5rem;
+  align-self: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.game {
+  width: 60rem;
+  height: 40rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+button {
+  width: 17.5rem;
+  font-size: 3.5rem;
+  height: 7rem;
+  color: #fff;
+  background-color: crimson;
+  border-radius: 1rem;
+  margin-left: 2rem;
+  border: none;
+}
+
+.hole {
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
+}
+
+.hole:after {
+  display: block;
+  background: url(dirt.png) bottom center no-repeat;
+  background-size: contain;
+  content: "";
+  width: 100%;
+  height: 9rem;
+  position: absolute;
+  z-index: 2;
+  bottom: -3rem;
+}
+
+.mole {
+  background: url("mole.png") bottom center no-repeat;
+  background-size: 80%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s;
+}
+
+.hole.up .mole {
+  top: 0;
+}
+
+@media (max-width: 64em) {
+  h1 {
+    display: none;
+  }
+
+  .center {
+    margin-top: 2rem;
+  }
+
+  .score {
+    padding: 0 1.2rem;
+    line-height: 1;
+    border-radius: 1.6rem;
+    color: #fff;
+    font-size: 4rem;
+    margin-left: 2rem;
+  }
+
+  .hole.up .mole {
+    top: 1.7rem;
+  }
+}
+
+@media (max-width: 42em) {
+  .game {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+  }
+
+  .score {
+    font-size: 2rem;
+    border-radius: 10px;
+    padding: 2rem;
+  }
+
+  button {
+    font-size: 2rem;
+  }
+
+  .hole:after {
+    display: block;
+    background: url(dirt.png) bottom center no-repeat;
+    background-size: contain;
+    content: "";
+    max-width: 70%;
+    height: 6rem;
+    position: absolute;
+    z-index: 2;
+    bottom: -3rem;
+  }
+
+  .mole {
+    background: url("mole.png") bottom center no-repeat;
+    background-size: 60%;
+    position: absolute;
+    top: 100%;
+    max-width: 70%;
+    height: 70%;
+    transition: all 0.4s;
+  }
+
+  .hole.up .mole {
+    top: 5rem;
+  }
+}
